@@ -1,9 +1,54 @@
-<h1> Cocktails List </h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Cocktails</a>
+    <button class="btn btn-outline-light" type="submit"><%= link_to "Add your own cocktail", new_cocktail_path %></button>
+  </div>
+</nav>
+    
+<div class="container-all">
+  <h1> Imagine. Feel. Enjoy.</h1>
+  <p>Are you single? In couple? Whatever, we do not we discriminate. Come to spend a unique night, with the best drinks</p>
 
-<ul>
+  <div class="container">
+    <div class="d-flex justify-content-evenly">
+
+      <div class="card mx-3">
+        <img src="https://i.pinimg.com/originals/b1/53/3e/b1533e5f618db4d88b11cbbb73520eb5.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            Cocktail Name
+          </h5>
+        </div>
+      </div>
+
+      <div class="card mx-3">
+        <img src="https://www.thespruceeats.com/thmb/9g5q0ChNcHs5IjThGwciEsa5d0Y=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-tonic-5a8f334b8e1b6e0036a9631d.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            Cocktail Name
+          </h5>
+        </div>
+      </div>
+
+      <div class="card mx-3">
+        <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2019/6/18/0/KC2109_Pina-Colada_s4x3.jpg.rend.hgtvcom.826.620.suffix/1560899439490.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            Cocktail Name
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+
+</footer>
+
+<!-- <ul>
   <% @cocktails.each do |cocktail| %>
     <li> <%= link_to "#{cocktail.name}", cocktail_path(cocktail) %> </li>
   <% end %>
 </ul>
-
-<%= link_to "Add your own cocktail!", new_cocktail_path, class: "btn btn-success" %>
+-->
