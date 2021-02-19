@@ -9,6 +9,8 @@
     <% end %>
 </ol>
 
+<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+
 <%= link_to "Add your own dose!", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
 
 <%= link_to "Cocktails list", cocktails_path, class: "btn btn-success" %>
