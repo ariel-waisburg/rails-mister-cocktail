@@ -12,32 +12,16 @@
   <div class="container">
     <div class="d-flex justify-content-evenly">
 
-      <div class="card mx-3">
-        <img src="https://i.pinimg.com/originals/b1/53/3e/b1533e5f618db4d88b11cbbb73520eb5.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">
-            Cocktail Name
-          </h5>
+      <% @cocktails.each do |cocktail| %>
+        <div class="card mx-3">
+          <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2019/6/18/0/KC2109_Pina-Colada_s4x3.jpg.rend.hgtvcom.826.620.suffix/1560899439490.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= link_to "#{cocktail.name}", cocktail_path(cocktail) %>
+            </h5>
+          </div>
         </div>
-      </div>
-
-      <div class="card mx-3">
-        <img src="https://www.thespruceeats.com/thmb/9g5q0ChNcHs5IjThGwciEsa5d0Y=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gin-tonic-5a8f334b8e1b6e0036a9631d.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">
-            Cocktail Name
-          </h5>
-        </div>
-      </div>
-
-      <div class="card mx-3">
-        <img src="https://food.fnr.sndimg.com/content/dam/images/food/fullset/2019/6/18/0/KC2109_Pina-Colada_s4x3.jpg.rend.hgtvcom.826.620.suffix/1560899439490.jpeg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">
-            Cocktail Name
-          </h5>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>
