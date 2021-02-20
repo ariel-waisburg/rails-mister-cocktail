@@ -1,15 +1,22 @@
-<h1> <%= @cocktail.name %> </h1>
+<nav class="navbar d-flex justify-content-between">
+  <%= link_to "Cocktails", root_path, class: "btn btn-ghost" %>
+  <%= link_to "Add Dose", new_cocktail_dose_path(@cocktail), class: "btn btn-ghost" %>
+</nav>
 
-<h3> Ingredients </h3>
-<ol>
-  <% @cocktail.doses.each do |dose| %>
-    <%= dose.ingredient.name %>
-    <%= link_to "Delete your dose!", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-success" %>
-
-    <% end %>
-</ol>
-
-
-<%= link_to "Add your own dose!", new_cocktail_dose_path(@cocktail), class: "btn btn-success" %>
-
-<%= link_to "Cocktails list", root_path, class: "btn btn-success" %>
+<div class="container">
+  <h1> <%= @cocktail.name %> ingredients</h1>
+  <div class="container-grid">
+    <div class="cards">
+      <% @cocktail.doses.each do |dose| %>
+        <div class="card-product">
+          <img src="https://source.unsplash.com/featured/?=<%=dose.ingredient.name%>">
+          <div class="card-product-info">
+            <h2><%=dose.ingredient.name%></h2>
+            <p><%=dose.description%></p>
+          </div>
+          <%= link_to "Delete your dose", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-ghost black" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

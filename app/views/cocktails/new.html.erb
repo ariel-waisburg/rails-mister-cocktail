@@ -1,7 +1,12 @@
-<%= simple_form_for(@cocktail) do |f| %>
-    <%= f.input :name %>
-    <%= f.button :submit, class: "btn btn-success" %>
-    <%= f.input :photo, as: :file %>
-<% end %>
+<nav class="navbar d-flex justify-content-between">
+  <%= link_to "Cocktails", root_path, class: "btn btn-ghost" %>
+</nav>
 
-<%= link_to "Cocktails list", root_path, class: "btn btn-success" %>
+<div class="container-form">
+  <h1> Create your cocktail</h1>
+  <%= simple_form_for @cocktail, defaults: { input_html: { class: 'default_class' } } do |f| %>
+    <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit, class: "btn btn-ghost black" %>
+  <% end %>
+</div>

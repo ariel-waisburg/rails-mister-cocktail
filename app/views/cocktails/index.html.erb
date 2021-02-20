@@ -1,31 +1,18 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand text-left" ><%= link_to "Cocktails", root_path %></a>
-    <button class="btn btn-outline-light" type="submit"><%= link_to "Add your own cocktail", new_cocktail_path %></button>
-  </div>
+<nav class="navbar d-flex justify-content-between">
+  <%= link_to "Cocktails", root_path, class: "btn btn-ghost" %>
+  <%= link_to "Add Cocktail", new_cocktail_path, class: "btn btn-ghost" %>
 </nav>
-    
-<div class="container-all">
+
+<div class="container-body">
   <h1> Imagine. Feel. Enjoy.</h1>
-  <p>Are you single? In couple? Whatever, we do not we discriminate. Come to spend a unique night, with the best drinks</p>
-
-  <div class="container">
-    <div class="d-flex">
-
+  <p>Make a list of the best cocktails in your city! Customized them with their ideals doses <i class="fas fa-cocktail"></i></p>
+  <div class="container-grid">
+    <div class="cards">
       <% @cocktails.each do |cocktail| %>
-        <div class="card">
-          <img src="https://source.unsplash.com/featured/?=<%=cocktail.name%>" class="card-img-top" alt=<%="#{cocktail.name}"%>>
-          <div class="card-body">
-            <h5 class="card-title">
-              <%= link_to "#{cocktail.name}", cocktail_path(cocktail), class: "cocktail" %>
-            </h5>
-          </div>
+        <div class="card-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?=<%=cocktail.name%>)">
+          <%= link_to "#{cocktail.name}", cocktail_path(cocktail), class: "cocktail-name" %>
         </div>
       <% end %>
     </div>
   </div>
 </div>
-
-<footer>
-
-</footer>
